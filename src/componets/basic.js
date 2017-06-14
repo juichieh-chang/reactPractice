@@ -1,48 +1,42 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 
-/**
- * 定義文字輸入框
- */
-class Input extends Component {
-  constructor(props) {
-    super(props);
-    this.classNameForDiv = 'controls ' + this.props.inputClass;
-  }
-  handleBlurOnInput(event) {
-    let checkResult = false;
-    this.props.onBlur(checkResult);
-  }
-  render() {
-    return (
-      <div className={this.classNameForDiv}>
-        <input className="form-control textUpperCase" type="text" maxLength="10" onBlur={this.handleBlurOnInput.bind(this)} />
-      </div>);
-  }
-}
+const Input = function (props) {
+  const classNameForDiv = 'controls ' + props.inputClass;
+  const classNameForInput = 'form-control';
+  const handleBlurOnInput = function () {
+    let checkResult = true;
+    props.onBlur(checkResult);
+  };
+
+  return <div className={classNameForDiv}>
+    <input className={classNameForInput} type="text" maxLength={props.maxLength} onBlur={handleBlurOnInput} />
+  </div>;
+
+};
 
 Input.propTypes = {
-  inputClass: React.PropTypes.string
+  inputClass: React.PropTypes.string,
+  maxLength: React.PropTypes.string
 };
 
 Input.defaultProps = {
-  inputClass: 'col-lg-9'
+  inputClass: 'col-lg-9',
+  maxLength: '2'
 };
 
-class Label extends Component {
-  constructor(props) {
-    super(props);
-    this.classNameForLable = 'control-label col-form-label ' + this.props.labelClass;
-  }
-  render() {
-    return (<label htmlFor="" className={this.classNameForLable} style={{ textAlign: this.props.textAlign }}>
-      {this.props.labelName}</label>);
-  }
-}
+const Label = function (props) {
+  const classNameForLable = 'control-label col-form-label ' + props.labelClass;
+
+  return <label className={classNameForLable} style={{ textAlign: props.textAlign }}>
+    {props.labelName}
+  </label>
+};
 
 Label.propTypes = {
   labelName: React.PropTypes.string.isRequired,
-  labelClass: React.PropTypes.string
+  labelClass: React.PropTypes.string,
+  textAlign: React.PropTypes.string
 };
 
 Label.defaultProps = {
@@ -50,65 +44,63 @@ Label.defaultProps = {
   textAlign: 'right'
 };
 
-class SelectForMcu extends Component {
-  constructor(props) {
-    super(props);
-    this.classNameForDiv = 'controls ' + this.props.selectClass;
-  }
-  render() {
-    return (
-      <div className={this.classNameForDiv}>
-        <Select name='select' options={[{ value: 'one', label: 'One' }, { value: 'two', label: 'Two' }]} />
-      </div>
-    );
-  }
-}
+const SelectForMcu = function (props) {
+  const classNameForDiv = 'controls ' + props.selectClass;
+  return <div className={classNameForDiv}>
+    <Select name='select' options={props.options} />
+  </div>;
+};
+
 SelectForMcu.propTypes = {
-  selectClass: React.PropTypes.string
+  selectClass: React.PropTypes.string,
+  options: React.PropTypes.array.isRequired
 };
 
 SelectForMcu.defaultProps = {
   selectClass: 'col-lg-9'
 };
 
-class Radio extends Component {
-  render() {
-    return (
-      <label className='form-check-label'>
-        <input type='radio' className='form-check-input' name={this.props.fieldName} value={this.props.radioValue} />
-        {this.props.radioName}
-      </label>
-    );
-  }
-}
+const Radio = function (props) {
+  return <label className='form-check-label'>
+    <input type='radio' className='form-check-input' name={props.fieldName} value={props.radioValue} />
+    {props.radioName}
+  </label>;
+};
+
 Radio.propTypes = {
   fieldName: React.PropTypes.string.isRequired,
-  radioValue: React.PropTypes.string.isRequired
+  radioValue: React.PropTypes.string.isRequired,
+  radioName: React.PropTypes.string.isRequired
 };
 
-class CheckBox extends Component {
-  render() {
-    return (
-      <label className='checkbox-inline'>
-        <input type="checkbox" className='form-check-input' name={this.props.fieldName} value={this.props.checkBoxValue} />
-        {this.props.checkBoxName}
-      </label>
-    );
-  }
-}
+const CheckBox = function (props) {
+  return <label className='checkbox-inline'>
+    <input type="checkbox" className='form-check-input' name={props.fieldName} value={props.checkBoxValue} />
+    {props.checkBoxName}
+  </label>;
+};
+
 CheckBox.propTypes = {
   fieldName: React.PropTypes.string.isRequired,
-  checkBoxValue: React.PropTypes.string.isRequired
+  checkBoxValue: React.PropTypes.string.isRequired,
+  checkBoxName: React.PropTypes.string.isRequired
 };
 
-class ButtonMcuObject extends Component {
-  render() {
-    return (
-      <button className={this.props.buttonClass}>
-        <i className={this.props.iconClass}></i>{this.props.buttonName}
-      </button>
-    );
-  }
+const ButtonMcuObject = function (props) {
+  const classNameForBtn = 'btn ' + props.buttonClass;
+  return <button className={classNameForBtn}>
+    <i className={props.iconClass}></i>{props.buttonName}
+  </button>;
+};
+
+ButtonMcuObject.propTypes = {
+  buttonClass: React.PropTypes.string,
+  buttonName: React.PropTypes.string.isRequired,
+  iconClass: React.PropTypes.string
+};
+
+ButtonMcuObject.defaultProps = {
+  buttonClass: 'btn-primary'
 }
 
 export { Input, Label, SelectForMcu, Radio, CheckBox, ButtonMcuObject }
