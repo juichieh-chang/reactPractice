@@ -1,0 +1,291 @@
+/**---------防止數字類型出現上下的按鈕------------**/
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield;
+}
+
+/*-----頁籤物件----------------------*/
+.mps-nav-tabs-cust {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+.mps-nav-tabs-cust > .nav-tabs,
+.mps-nav-tabs-cust > .scroller-wrapper > .nav-tabs {
+	padding-left: 18px;
+	padding-top: 8px;
+	border-bottom: 0;
+	margin: 0;
+}
+.mps-nav-tabs-cust > .nav-tabs > li,
+.mps-nav-tabs-cust > .scroller-wrapper > .nav-tabs > li {
+	margin-right:0;
+	margin-left:0;
+	background-color:#888;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.8);
+	border-top: 3px solid transparent;
+	margin-bottom: -2px;
+}
+.mps-nav-tabs-cust > .nav-tabs > li > a,
+.mps-nav-tabs-cust > .scroller-wrapper > .nav-tabs > li > a{
+	color:#FFF;
+	border-radius: 0;
+	margin-right:0;
+	padding: 5px 10px;
+}
+.mps-nav-tabs-cust > .nav-tabs > li > a,
+.mps-nav-tabs-cust > .scroller-wrapper > .nav-tabs > li > a:hover,
+.mps-nav-tabs-cust > .nav-tabs > li > a,
+.mps-nav-tabs-cust > .scroller-wrapper > .nav-tabs > li > a:hover {
+	background: transparent;
+}
+.mps-nav-tabs-cust > .nav-tabs > li:hover a,
+.mps-nav-tabs-cust > .scroller-wrapper > .nav-tabs > li:hover a{
+	background-color:#f0f0f0;
+	border-color: transparent;
+	color:#8c2928;
+}
+.mps-nav-tabs-cust > .nav-tabs > li.mps-done-tab,
+.mps-nav-tabs-cust > .scroller-wrapper > .nav-tabs > li.mps-done-tab {
+	background-color:#8c2928;
+}
+.mps-nav-tabs-cust > .nav-tabs > li.active,
+.mps-nav-tabs-cust > .scroller-wrapper > .nav-tabs > li.active {
+	border-top-color:#d93332;
+	z-index:3;
+}
+.mps-nav-tabs-cust > .nav-tabs > li.active:hover > a,
+.mps-nav-tabs-cust > .scroller-wrapper > .nav-tabs > li.active:hover > a {
+	background-color: #fff;
+	color: #444;
+}
+.mps-nav-tabs-cust > .nav-tabs > li.active > a,
+.mps-nav-tabs-cust > .scroller-wrapper > .nav-tabs > li.active > a {
+	background-color: #FFF;
+	color: #8c2928;
+}
+
+.mps-nav-tabs-cust > .tab-content {
+	padding: 0px;
+	z-index:4;
+	top: 43px;
+	position:absolute;
+	width: 100%;
+	background-color: #f0f0f0;
+}
+
+.mps-nav-tabs-cust .scroller-wrapper {
+	position:relative;
+	margin:0 auto;
+	overflow-y:hidden;
+	padding:0px;
+	height:60px;
+}
+.mps-nav-tabs-cust .scroller-wrapper > .nav-tabs {
+	position:absolute;
+	left:0px;
+	top:0px;
+	min-width:3000px;
+}
+
+.mps-nav-tabs-cust > .scroller {
+	text-align:center;
+	cursor:pointer;
+	display:none;
+	padding:6px 2px 4px 2px;
+	white-space:no-wrap;
+	vertical-align:middle;
+	background-color:#fff;
+	margin-top: 8px;
+}
+
+.mps-nav-tabs-cust > .scroller-right{
+	float:right;
+}
+
+.mps-nav-tabs-cust > .scroller-left {
+	float:left;
+}
+/*完成及錯誤提醒*/
+.badge {
+	display: inline-block;
+	/* min-width: 10px; */
+	padding: 5px 8px;
+	font-size: 12px;
+	/* border-radius: 50%; */
+	font-weight: 700;
+	line-height: 1;
+	color: #fff;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	background-color: #777;
+	border-radius: 50%;
+	position: absolute;
+	top: -12px;
+	left: 2px;
+}
+.success-badge{
+	background-color:#00a65a;
+	padding:5px 5.5px;
+}
+.error-badge {
+	background-color: #d93332;
+	padding: 5px 5.5px;
+}
+/*-----------------------------------*/
+
+
+
+/*卡片*/
+.mps_card {
+	/*box-shadow:0 2px 2px 0 rgba(0,0,0,.14),0 3px 1px -2px rgba(0,0,0,.2),0 1px 5px 0 rgba(0,0,0,.12)*/
+	border-right:1px solid rgba(0,0,0,0.2);
+	border-left:1px solid rgba(0,0,0,0.2);
+	border-bottom:1px solid rgba(0,0,0,0.2);
+}
+/*-----------------------------------*/
+
+
+
+/*-----最下面三個按鈕-----------------*/
+.mpsform_bottom_btns{
+	position:relative;
+	width:100%;
+	text-align:center
+}
+.mpsform_bottom_btns button{
+	display:inline-block;
+}
+/*-----------------------------------*/
+
+
+
+/*-----mpsform共用css--------------- */
+.mcu-object .control-label,
+.mcu-helper .control-label {
+	float: left;
+	padding-left: 7px;
+	padding-right: 7px;
+}
+.mcu-object .controls,
+.mcu-helper .controls {
+	float: left;
+	height: 100%;
+}
+.mcu-object div {
+	font-family: inherit;
+}
+.mcu-object .to-select2 .select2-choice,
+.mcu-helper .to-select2 .select2-choice {
+	height: 34px;
+}
+
+.mcu-object, .mcu-helper {
+	cursor: move;
+}
+.mcu-object {
+	border: 1px solid transparent;
+}
+
+/*-----------------------------------*/
+
+
+
+/*-----單複選框物件------------------ */
+[data-mcutype="checkgroup"] .controls{
+	padding-bottom: 5px;
+}
+[data-mcutype="checkgroup"] .btn-group {
+	padding-bottom: 0px;
+}
+[data-mcutype="checkgroup"] .btn-group-xs {
+	padding-top: 6px;
+	padding-bottom: 4px;
+}
+[data-mcutype="checkgroup"] .controls > label.radio,
+[data-mcutype="checkgroup"] .controls > label.checkbox {
+	padding-left: 20px;
+}
+[data-mcutype="checkgroup"] .btn-group-vertical>.btn.active,
+[data-mcutype="checkgroup"] .btn-group-vertical>.btn:active, 
+[data-mcutype="checkgroup"] .btn-group-vertical>.btn:focus,
+[data-mcutype="checkgroup"] .btn-group-vertical>.btn:hover, 
+[data-mcutype="checkgroup"] .btn-group>.btn.active, 
+[data-mcutype="checkgroup"] .btn-group>.btn:active, 
+[data-mcutype="checkgroup"] .btn-group>.btn:focus, 
+[data-mcutype="checkgroup"] .btn-group>.btn:hover {
+	background: #d93332;
+	color: #fff;
+}
+[data-mcutype="checkgroup"] .btn-group>.btn-default:hover {
+   background-color: #EEE;
+   color: #333;
+}
+/*-----------------------------------*/
+
+
+
+/*-----地址物件----------------------*/
+.helper-address .controls > *,
+[data-mcutype="address"] .controls > * {
+	float: left;
+}
+.helper-address .controls > div,
+[data-mcutype="address"] .controls > div {
+	margin-right: 4px;
+	width:100px;
+}
+/*-----------------------------------*/
+
+
+/*-----日期物件-------------------*/
+[data-mcutype="date"] .input-group,
+.mcu-helper .input-group {
+	width: 100%;
+}
+[data-mcutype="date"] .input-group .form-control:first-child,
+.mcu-helper .input-group .form-control:first-child{
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+[data-mcutype="date"] .input-group .input-group-addon,
+.mcu-helper .input-group .input-group-addon{
+	display: none;
+}
+/*-----------------------------------*/
+
+
+/*-----文字輸入物件-------------------*/
+[data-mcutype="textbox"] textarea.form-control {
+	height: 100%;
+}
+/*-----------------------------------*/
+
+
+/*-----FlexiGrid物件-------------------*/
+[data-mcutype="flexigrid"] .hDiv input {
+	margin: 0px;
+}
+[data-mcutype="flexigrid"] .flexigrid {
+	font-size: 12px;
+}
+/*-----------------------------------*/
+
+/*-----Label物件-------------------*/
+[data-mcutype="label"] {
+	height: 36px;
+	padding: 7px 7px 0px 7px;
+}
+/*-----------------------------------*/
+
+/*-----HTML物件-------------------*/
+[data-mcutype="html"] {
+	overflow: hidden;
+}
+/*-----------------------------------*/
