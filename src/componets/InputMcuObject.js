@@ -16,13 +16,15 @@ class InputMcuObject extends Component {
   render() {
     let classNameForDiv = this.props.selfClass;
     classNameForDiv = this.state.hasError ? classNameForDiv : (classNameForDiv + ' has-danger');
-    return (<div className={classNameForDiv}>
+    const _inputId = 'mcuinput-' + this.props.id
+    return (<div className={classNameForDiv} id={this.props.id}>
       <div className="form-group row">
-        <Label labelName={this.props.labelName} labelClass={this.props.labelClass} />
-        <Input inputClass={this.props.inputClass} onBlur={this.handleBlurOnMcuObject.bind(this)} />
+        <Label labelName={this.props.labelName} labelClass={this.props.labelClass} textAlign={this.props.textAlign} />
+        <Input inputId={_inputId} inputClass={this.props.inputClass} onBlur={this.handleBlurOnMcuObject.bind(this)} />
       </div>
     </div>);
   }
 }
+
 
 export { InputMcuObject }

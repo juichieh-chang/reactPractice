@@ -3,30 +3,30 @@
 ## 基本元素
 * Input 基本文字輸入方塊 由一個DIV和一個INPUT TYPE=text所組成
 ```html
-  <div class="controls col-lg-9">
-    <input type="text" class="form-control" maxlength="2">
+  <div class="col-lg-9">
+    <input type="text" class="form-control" maxlength="40">
   </div>
 ```
 * Lable 非常單純的LABEL標籤
 ```html
-  <label class="control-label col-form-label col-lg-3" style="text-align: right;">姓名</label>
+  <label class="col-form-label col-md-3" style="text-align: right;">姓名</label>
 ```
 * SelectForMcu 下拉選單 由一個DIV和一個react-select2套件元素所組成
 ```html
-  <div class="controls col-lg-9">
+  <div class="col-lg-9">
     <Select name='select' options={props.options} />
   </div>
   ```
 * Radio 單選按鈕 由一個LABLE和一個INPUT TYPE=radio所組成
 ```html
   <label class="form-check-label">
-    <input type="radio" class="form-check-input" name="gender" value="1">男
+    <input type="radio" name="gender" value="1">男
   </label>
 ```
 * CheckBox 勾選框 由一個LABLE和一個INPUT TYPE=checkbox所組成
 ```html
-  <label class="checkbox-inline">
-    <input type="checkbox" class="form-check-input" name="jjj" value="1">
+  <label class="form-check-label">
+    <input type="checkbox" name="gender" value="1">
   </label>
 ```
 * ButtonMcuObject 按鈕 由一個button內含一個i標籤所組成

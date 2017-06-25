@@ -13,7 +13,7 @@ class CheckBoxMcuObject extends Component {
     classNameForDiv = this.state.hasError ? classNameForDiv : (classNameForDiv + ' has-danger');
     return (
       <div className={classNameForDiv}>
-        <div className='form-check form-check-inline row col-lg-12'>
+        <div className='form-check'>
           <Label labelName={this.props.labelName} labelClass={this.props.labelClass} />
           <div className={this.props.checkBoxClass}>
             <CheckBox fieldName={this.props.fieldName} checkBoxValue={this.props.checkBoxValue} checkBoxName={this.props.checkBoxName} />

@@ -11,7 +11,7 @@ class Select2McuObject extends Component {
   render() {
     let classNameForDiv = this.props.selfClass;
     classNameForDiv = this.state.hasError ? classNameForDiv : (classNameForDiv + ' has-danger');
-    return (<div id='mcu-3' className={classNameForDiv}>
+    return (<div className={classNameForDiv}>
       <div className="form-group row">
         <Label labelName={this.props.labelName} labelClass={this.props.labelClass} />
         <SelectForMcu options={this.props.options} selectClass={this.props.selectClass} />
